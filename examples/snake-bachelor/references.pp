@@ -4,8 +4,14 @@ add-waybackmachine-links `true`
 // sorting is set in the style template!
 
 
-@kouhia15 `10.1016/j.algal.2015.04.001`
-@hellaswag `10.18653/v1/p19-1472`
+@kouhia15
+  doi `10.1016/j.algal.2015.04.001` // providing DOI or ISBN is enough
+
+@hellaswag
+  doi `10.18653/v1/p19-1472`
+
+@3d
+  isbn `9780201758672` // providing DOI or ISBN is enough
 
 @fb
   url `facebook.com`
