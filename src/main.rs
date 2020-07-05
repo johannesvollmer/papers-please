@@ -58,8 +58,6 @@ struct SectionId {
     sub_chapter: Option<Box<SectionId>>,
 }
 
-
-
 type Author = Vec<String>;
 
 
@@ -110,16 +108,16 @@ async fn extend(client: &Client, publication: &mut Publication) {
 
     if let Some(doi) = publication.doi.as_ref() {
         let url = "http://dx.doi.org/".to_string() + &doi; // TODO escape string
-        requests.push(client.get(url.as_str()).header("accept", "application/x-bibtex"));
+        requests.push(client.get(url.as_str()).header("accept", "application/x-bibtex").send());
     }
 
     if let Some(isbn) = publication.isbn.as_ref() {
         let url = format!("http://www.ottobib.com/isbn/{}/bibtex", isbn); // TODO escape string
-        requests.push(client.get(url.as_str()));
+        requests.push(client.get(url.as_str()).send());
     }
 
-    for request in requests {
-        let response = request.send().await.and_then(|r| r.error_for_status());
+    for request in futures::future::join_all(requests).await {
+        let response = request.and_then(|r| r.error_for_status());
 
         if let Ok(response) = response {
             let response = response.text().await;
