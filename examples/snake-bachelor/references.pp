@@ -1,7 +1,7 @@
 add-waybackmachine-links `true`
 
 
-# sorting is set in the style template!
+// sorting is set in the style template!
 
 
 @kouhia15 `10.1016/j.algal.2015.04.001`

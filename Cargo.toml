@@ -12,3 +12,4 @@ tokio = { version = "0.2", features = ["full"] }
 serde = { version = "1.0.110", features = ["derive"] }
 futures = "0.3.5"
 nom-bibtex = "0.2.0"
+url = "2.1.1"
