@@ -1,6 +1,8 @@
 use crate::Paper;
+use std::path::Path;
 
-fn apply(source: &str, rules: &Paper) -> String {
+fn parse(file: &Path) -> Paper {
+
     unimplemented!()
 }
 

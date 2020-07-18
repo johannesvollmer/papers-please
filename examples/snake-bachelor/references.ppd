@@ -14,6 +14,7 @@ add-waybackmachine-links `true`
   isbn `9780201758672` // providing DOI or ISBN is enough
 
 @fb
+  category `blog`
   url `facebook.com`
   checked `3.7.2020`
   owner `facebook inc.`

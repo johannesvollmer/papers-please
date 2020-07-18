@@ -1,7 +1,7 @@
 use reqwest::{Client, Url};
 use std::iter::Iterator;
 use std::collections::HashMap;
-use std::path::PathBuf;
+use std::path::{PathBuf, Path};
 use std::time::Instant;
 use futures::join;
 use std::string::ParseError;
@@ -98,6 +98,29 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     ).await;
 
     dbg!(problems);
+
+    Ok(())
+}
+
+
+fn parse_paper_main(path: &Path) -> std::io::Result<Paper> {
+    let string = std::fs::read_to_string(path)?;
+
+    let mut remaining = string.as_str();
+    let mut tokens = Vec::new();
+
+    while !remaining.is_empty() {
+        let key_end = remaining.find('`');
+        if let Some(key_end) = key_end {
+            
+
+            tokens.push(&remaining[.. next_start]);
+            remaining = &remaining[next_start + 1 ..];
+        }
+
+    }
+
+    dbg!(tokens);
 
     Ok(())
 }

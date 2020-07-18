@@ -1,0 +1,51 @@
+cover `cover-v07-final-B-3-FINAL-asdasfasdaf.pdf`
+
+title `Evaluation of Snakes as Flight Attendants from a User Experience Standpoint`
+subtitle `Bachelor's Thesis`
+
+logo `logo.pdf`
+
+author
+  name `Timothy Dinklerberg`
+  email `timothy-dinklerberg@ustcs.ucts`
+
+involved
+  role `examiners`
+  `Prof. Dr. Kladdenhardt`
+  `Prof. Dr. Dr. Weißensteiner`
+
+
+abstract
+`Snakes are not as socially accepted as dogs or cats.
+In this study, we prove that snakes may be an
+adequate alternative to human flight attendants.`
+
+figures
+  folder `images`
+  backlink `true`
+
+  @snek `snake.png` `Average snake`
+
+  @len `snake-length-by-social-distance-diagram.pdf`
+    `Average length of snakes, depending on social distance habits`
+
+// add option to replace all abbreviations with respective contents?
+// allow simple variables for generic items such as conventions?
+definitions
+  type `insert` // or type `abbreviation` ?
+  @`SINK` `Snakes In Natural Knots`
+  @`SOAP` `Snakes On A Plane`
+
+pagination
+  start-roman `true`
+
+// this generates a table of contents, the order is relevant here! (make syntax reflect this?)
+// alternatively, let the user provide a table of contents and report missing files!
+contents
+  folder `chapters`
+  @introduction `introduction.ppc`
+  @analysis     `analysis.ppc`
+  @evaluation   `evaluation.ppc`
+  @discussion   `discussion.ppc`
+
+references `references.ppd`
