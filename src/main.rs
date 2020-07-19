@@ -103,27 +103,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 
-fn parse_paper_main(path: &Path) -> std::io::Result<Paper> {
-    let string = std::fs::read_to_string(path)?;
-
-    let mut remaining = string.as_str();
-    let mut tokens = Vec::new();
-
-    while !remaining.is_empty() {
-        let key_end = remaining.find('`');
-        if let Some(key_end) = key_end {
-            
-
-            tokens.push(&remaining[.. next_start]);
-            remaining = &remaining[next_start + 1 ..];
-        }
-
-    }
-
-    dbg!(tokens);
-
-    Ok(())
-}
 
 
 async fn extend(client: &Client, publication: &mut Publication) {
